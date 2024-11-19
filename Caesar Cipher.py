@@ -33,23 +33,5 @@ def shift_character(char , shift):
     else:
         return char 
     
-def main():
-    while True:
-        choice = display_menu()
-        if choice=='1' or choice == '2':
-            message , shift = get_inputs()
-            if choice == '1' :
-                print (f'Encrypt  massage : {message} ,with shift: {shift}')
-            elif choice =='2':
-                print (f'Decrypt  massage : {message} ,with shift: {-shift}')
-    
-            for char in message :
-                shifted_char = shift_character(char , shift if choice =='1' else -shift)
-                print(f'Text = {char} , shifted: {shifted_char}')
-        elif choice == '3':
-            print('EXIT')
 
-
-# Run the main function
-main()
 
