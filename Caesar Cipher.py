@@ -38,3 +38,10 @@ def encrypt(message , shift):
     for char in encrypt_message:
         encrypt_message += shift_character(char , shift)
     return encrypt_message
+
+def decrypt (message , shift):
+    decrypt_message = ''
+    for chr in message:
+        decrypt_message += shift_character(message , -shift)
+    return decrypt_message
+    
