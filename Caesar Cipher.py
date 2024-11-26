@@ -28,20 +28,39 @@ def shift_character(char , shift):
         shifted = (ord(char) - ord('A') + shift)%26 + ord('A')
         return chr(shifted)
     elif char.islower():
-        shifted = (ord(char) - ord('a') + shift) % 26 + ord('a')
+        shifted = (ord(char) - ord('a') + shift)%26 + ord('a')
         return chr(shifted)
     else:
         return char 
     
 def encrypt(message , shift):
     encrypt_message = ''
-    for char in encrypt_message:
+    for char in message:
         encrypt_message += shift_character(char , shift)
     return encrypt_message
 
 def decrypt (message , shift):
     decrypt_message = ''
     for chr in message:
-        decrypt_message += shift_character(message , -shift)
+        decrypt_message += shift_character(chr , -shift)
     return decrypt_message
     
+def display_result (result , action):
+    print(f"the {action}ed message is :{result}")
+
+def main():
+    while True:
+        choice = display_menu()
+
+        if choice == '1':
+            message , shift = get_inputs()
+            encrypt_message = encrypt(message,shift)
+            display_result(encrypt_message , "encrypt")
+        elif choice == '2':
+            message ,shift = get_inputs()
+            decrypt_message = decrypt(message,shift)
+            display_result(decrypt_message , "decrypt")
+        elif choice == '3':
+            print('Goodbye!!!')
+            break
+main()
