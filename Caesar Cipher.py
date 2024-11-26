@@ -33,5 +33,8 @@ def shift_character(char , shift):
     else:
         return char 
     
-
-
+def encrypt(message , shift):
+    encrypt_message = ''
+    for char in encrypt_message:
+        encrypt_message += shift_character(char , shift)
+    return encrypt_message
